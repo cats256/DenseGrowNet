@@ -16,6 +16,7 @@ Contact: nhatbui@tamu.edu (would be great if someone is looking to discuss, coll
 
 Cool read:
 - https://stats.stackexchange.com/questions/339054/what-values-should-initial-weights-for-a-relu-network-be
+- https://proceedings.neurips.cc/paper/2020/file/f3f27a324736617f20abbf2ffd806f6d-Paper.pdf
 
 Reference: 
 1) Why do tree-based models still outperform deep learning on typical tabular data? https://openreview.net/pdf?id=Fp7__phQszn
