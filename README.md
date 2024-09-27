@@ -9,8 +9,8 @@ The preservation of the original orientation of features at initialization and i
 It is known that L1 regularization is rotationally invariant and logistic regression with L1 regularization is robust against uninformative features, where sample complexity grows only logarithmically with the number of irrelevant features (5). One can, then, see that L1 regularization is desirable to include as part of the learning procedure, as it mirrors the inductive biases that contribute to tree-based models' strong performance on tabular data. Overparameterization and the replacement of ReLU with Softplus under this architecture also appear to improve generalization performance, although the effect is very minor.
 
 To do:
-- Need to include smooth versions of ReLUs and their advantages in README, which include smoother optimization landscapes and improved robustness at very little trade-off to accuracy.
-- Take a look at memory-efficient implementations of DenseNets. In current implementations, DenseNet consumes quadratic memory with respect to depth but since feature maps are reused almost everywhere, through some implementation tricks DenseNet can also be implemented in linear memory (7) (8).
+- Need to include smooth versions of ReLUs and their advantages in README, which include improved robustness (7) and smoother optimization landscapes (8) at very little trade-off to accuracy.
+- Take a look at memory-efficient implementations of DenseNets. In current implementations, DenseNet consumes quadratic memory with respect to depth but since feature maps are reused almost everywhere, through some implementation tricks DenseNet can also be implemented in linear memory (9) (10).
 
 Contact: nhatbui@tamu.edu (would be great if someone is looking to discuss, collaborate, or act as a mentor on this research project XD ) 
 
@@ -25,5 +25,6 @@ Reference:
 5) Resurrecting the sigmoid in deep learning through dynamical isometry: theory and practice https://arxiv.org/pdf/1711.04735
 6) Feature selection, L1 vs. L2 regularization, and rotational invariance https://icml.cc/Conferences/2004/proceedings/papers/354.pdf
 7) Smooth Adversarial Training https://arxiv.org/abs/2006.14536
-8) https://www.reddit.com/r/MachineLearning/comments/67fds7/comment/dgrrp54/
-9) Memory-Efficient Implementation of DenseNets https://arxiv.org/abs/1707.06990
+8) Reproducibility in Deep Learning and Smooth Activations https://research.google/blog/reproducibility-in-deep-learning-and-smooth-activations/
+9) https://www.reddit.com/r/MachineLearning/comments/67fds7/comment/dgrrp54/
+10) Memory-Efficient Implementation of DenseNets https://arxiv.org/abs/1707.06990
