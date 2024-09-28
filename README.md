@@ -11,6 +11,7 @@ It is known that L1 regularization is rotationally invariant and logistic regres
 To do:
 - Need to include smooth versions of ReLUs and their advantages in README, which include improved robustness (7) and smoother optimization landscapes (8) at very little trade-off to accuracy.
 - Take a look at memory-efficient implementations of DenseNets. In current implementations, DenseNet consumes quadratic memory with respect to depth but since feature maps are reused almost everywhere, through some implementation tricks DenseNet can also be implemented in linear memory (9) (10).
+- Look at deep learning significance testing https://deep-significance.readthedocs.io/en/latest/
 
 Contact: nhatbui@tamu.edu (would be great if someone is looking to discuss, collaborate, or act as a mentor on this research project XD ) 
 
