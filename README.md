@@ -21,6 +21,7 @@ Cool read:
 - https://www.fast.ai/posts/2018-07-02-adam-weight-decay.html
 - https://sebastianraschka.com/blog/2022/deep-learning-for-tabular-data.html
 - https://mindfulmodeler.substack.com/p/inductive-biases-of-the-random-forest
+- https://sebastianraschka.com/blog/2022/deep-learning-for-tabular-data.html
 
 Reference: 
 1) Why do tree-based models still outperform deep learning on typical tabular data? https://openreview.net/pdf?id=Fp7__phQszn
