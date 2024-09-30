@@ -24,6 +24,7 @@ Cool read:
 - https://sebastianraschka.com/blog/2022/deep-learning-for-tabular-data.html
 - https://mindfulmodeler.substack.com/p/inductive-biases-of-the-random-forest
 - https://sebastianraschka.com/blog/2022/deep-learning-for-tabular-data.html
+- https://openreview.net/forum?id=UgBo_nhiHl (not the same thing as what I'm doing, this was discovered after)
 
 Reference: 
 1) Why do tree-based models still outperform deep learning on typical tabular data? https://openreview.net/pdf?id=Fp7__phQszn
