@@ -1,4 +1,5 @@
 Update 10/1: Check out gradient-boosting-resnet
+
 Update 9/25: Pretty busy at the moment but benchmarking results will be uploaded hopefully in the next couple of weeks
 
 Tree-based models have long been state-of-the-art on medium-sized tabular data, despite extensive research on deep learning for this type of data. Certain inductive biases of tree-based models, such as their rotationally variant learning procedure and robustness against uninformative features (1), contribute to their strong performance on tabular data, in contrast to MLPs' rotationally invariant learning procedure and high capacity for overfitting. This project aims to apply the inductive biases of tree-based methods on MLP-like neural nets and improve their performance on tabular data.
