@@ -1,4 +1,4 @@
-Update 10/1: Check out gradient-boosting-resnet
+Update 10/2: Check out dense-grownet-benchmark (preliminary proof of concept) and dense-grownet-architecture.ipynb
 
 Update 9/25: Pretty busy at the moment but benchmarking results will be uploaded hopefully in the next couple of weeks
 
