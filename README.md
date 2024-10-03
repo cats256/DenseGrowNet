@@ -10,7 +10,7 @@ The preservation of the original orientation of features at initialization and i
 It is known that L1 regularization is rotationally invariant and logistic regression with L1 regularization is robust against uninformative features, where sample complexity grows only logarithmically with the number of irrelevant features (5). One can, then, see that L1 regularization is desirable to include as part of the learning procedure, as it mirrors the inductive biases that contribute to tree-based models' strong performance on tabular data. Overparameterization and the replacement of ReLU with Softplus under this architecture also appear to improve generalization performance, although the effect is very minor.
 
 To do:
-- Check this out, convex optimization of two-layer neural network. https://scnn.readthedocs.io/en/latest/quick_start.html. https://stanford.edu/~wangyf18/tutorial_cvxnn.html. https://arxiv.org/abs/2002.10553. https://web.stanford.edu/class/ee364b/lectures/convexNN.pdf
+- Check out the convex optimization of a two-layer neural network. https://scnn.readthedocs.io/en/latest/quick_start.html. https://stanford.edu/~wangyf18/tutorial_cvxnn.html. https://arxiv.org/abs/2002.10553. https://web.stanford.edu/class/ee364b/lectures/convexNN.pdf
 - Needs to include smooth versions of ReLUs and their advantages in README, which include improved robustness (7) and smoother optimization landscapes (8) at very little trade-off to accuracy.
 - Take a look at memory-efficient implementations of DenseNets. In current implementations, DenseNet consumes quadratic memory with respect to depth but since feature maps are reused almost everywhere, through some implementation tricks DenseNet can also be implemented in linear memory (9) (10).
 - Look at deep learning significance testing https://deep-significance.readthedocs.io/en/latest/
@@ -51,8 +51,12 @@ Reference:
 
    https://arxiv.org/abs/2006.14536
 9) Reproducibility in Deep Learning and Smooth Activations
+
    https://research.google/blog/reproducibility-in-deep-learning-and-smooth-activations/
+
 10) How does DenseNet compare to ResNet and Inception?
-   https://www.reddit.com/r/MachineLearning/comments/67fds7/comment/dgrrp54/
+
+    https://www.reddit.com/r/MachineLearning/comments/67fds7/comment/dgrrp54/
 11) Memory-Efficient Implementation of DenseNets
+
     https://arxiv.org/abs/1707.06990
