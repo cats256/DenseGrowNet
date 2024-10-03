@@ -30,22 +30,29 @@ Cool read:
 
 Reference: 
 1) Why do tree-based models still outperform deep learning on typical tabular data?
+
    https://openreview.net/pdf?id=Fp7__phQszn
-2) Densely Connected Convolutional Networks
+3) Densely Connected Convolutional Networks
+
    https://arxiv.org/pdf/1608.06993
-3) The Shattered Gradients Problem: If resnets are the answer, then what is the question?
+4) The Shattered Gradients Problem: If resnets are the answer, then what is the question?
+
    https://proceedings.mlr.press/v70/balduzzi17b/balduzzi17b.pdf
-4) "looks-linear" initialization explanation
+5) "looks-linear" initialization explanation
+
    https://www.reddit.com/r/MachineLearning/comments/5yo30r/comment/desyjot/
-5) Resurrecting the sigmoid in deep learning through dynamical isometry: theory and practice
+6) Resurrecting the sigmoid in deep learning through dynamical isometry: theory and practice
+
    https://arxiv.org/pdf/1711.04735
-6) Feature selection, L1 vs. L2 regularization, and rotational invariance
+7) Feature selection, L1 vs. L2 regularization, and rotational invariance
+
    https://icml.cc/Conferences/2004/proceedings/papers/354.pdf
-7) Smooth Adversarial Training
+8) Smooth Adversarial Training
+
    https://arxiv.org/abs/2006.14536
-8) Reproducibility in Deep Learning and Smooth Activations
+9) Reproducibility in Deep Learning and Smooth Activations
    https://research.google/blog/reproducibility-in-deep-learning-and-smooth-activations/
-9) How does DenseNet compare to ResNet and Inception?
+10) How does DenseNet compare to ResNet and Inception?
    https://www.reddit.com/r/MachineLearning/comments/67fds7/comment/dgrrp54/
 11) Memory-Efficient Implementation of DenseNets
     https://arxiv.org/abs/1707.06990
