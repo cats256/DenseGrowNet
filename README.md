@@ -1,5 +1,4 @@
 Update 10/2: Check out dense-grownet-benchmark (preliminary proof of concept) and dense-grownet-architecture.ipynb
-
 Update 9/25: Pretty busy at the moment but benchmarking results will be uploaded hopefully in the next couple of weeks
 
 Tree-based models have long been state-of-the-art on medium-sized tabular data, despite extensive research on deep learning for this type of data. Certain inductive biases of tree-based models, such as their rotationally variant learning procedure and robustness against uninformative features (1), contribute to their strong performance on tabular data, in contrast to MLPs' rotationally invariant learning procedure and high capacity for overfitting. This project aims to apply the inductive biases of tree-based methods on MLP-like neural nets and improve their performance on tabular data.
@@ -12,7 +11,7 @@ It is known that L1 regularization is rotationally invariant and logistic regres
 
 To do:
 - Check this out, convex optimization of two-layer neural network. https://scnn.readthedocs.io/en/latest/quick_start.html. https://stanford.edu/~wangyf18/tutorial_cvxnn.html. https://arxiv.org/abs/2002.10553. https://web.stanford.edu/class/ee364b/lectures/convexNN.pdf
-- Need to include smooth versions of ReLUs and their advantages in README, which include improved robustness (7) and smoother optimization landscapes (8) at very little trade-off to accuracy.
+- Needs to include smooth versions of ReLUs and their advantages in README, which include improved robustness (7) and smoother optimization landscapes (8) at very little trade-off to accuracy.
 - Take a look at memory-efficient implementations of DenseNets. In current implementations, DenseNet consumes quadratic memory with respect to depth but since feature maps are reused almost everywhere, through some implementation tricks DenseNet can also be implemented in linear memory (9) (10).
 - Look at deep learning significance testing https://deep-significance.readthedocs.io/en/latest/
 - Experiment with progressively growing a 2-layer neural network where after training/validation loss plateau, add more neurons to each layer, but not more layers, and keep the weights of the neuron previously trained frozen. This is similar to gradient-boosting
@@ -30,13 +29,23 @@ Cool read:
 - https://openreview.net/forum?id=UgBo_nhiHl (not the same thing as what I'm doing, this was discovered after)
 
 Reference: 
-1) Why do tree-based models still outperform deep learning on typical tabular data? https://openreview.net/pdf?id=Fp7__phQszn
-2) Densely Connected Convolutional Networks https://arxiv.org/pdf/1608.06993
-3) The Shattered Gradients Problem: If resnets are the answer, then what is the question? https://proceedings.mlr.press/v70/balduzzi17b/balduzzi17b.pdf
-4) https://www.reddit.com/r/MachineLearning/comments/5yo30r/comment/desyjot/
-5) Resurrecting the sigmoid in deep learning through dynamical isometry: theory and practice https://arxiv.org/pdf/1711.04735
-6) Feature selection, L1 vs. L2 regularization, and rotational invariance https://icml.cc/Conferences/2004/proceedings/papers/354.pdf
-7) Smooth Adversarial Training https://arxiv.org/abs/2006.14536
-8) Reproducibility in Deep Learning and Smooth Activations https://research.google/blog/reproducibility-in-deep-learning-and-smooth-activations/
-9) https://www.reddit.com/r/MachineLearning/comments/67fds7/comment/dgrrp54/
-10) Memory-Efficient Implementation of DenseNets https://arxiv.org/abs/1707.06990
+1) Why do tree-based models still outperform deep learning on typical tabular data?
+   https://openreview.net/pdf?id=Fp7__phQszn
+2) Densely Connected Convolutional Networks
+   https://arxiv.org/pdf/1608.06993
+3) The Shattered Gradients Problem: If resnets are the answer, then what is the question?
+   https://proceedings.mlr.press/v70/balduzzi17b/balduzzi17b.pdf
+4) "looks-linear" initialization explanation
+   https://www.reddit.com/r/MachineLearning/comments/5yo30r/comment/desyjot/
+5) Resurrecting the sigmoid in deep learning through dynamical isometry: theory and practice
+   https://arxiv.org/pdf/1711.04735
+6) Feature selection, L1 vs. L2 regularization, and rotational invariance
+   https://icml.cc/Conferences/2004/proceedings/papers/354.pdf
+7) Smooth Adversarial Training
+   https://arxiv.org/abs/2006.14536
+8) Reproducibility in Deep Learning and Smooth Activations
+   https://research.google/blog/reproducibility-in-deep-learning-and-smooth-activations/
+9) How does DenseNet compare to ResNet and Inception?
+   https://www.reddit.com/r/MachineLearning/comments/67fds7/comment/dgrrp54/
+11) Memory-Efficient Implementation of DenseNets
+    https://arxiv.org/abs/1707.06990
