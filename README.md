@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/0f45b34b-19de-4abe-aba1-238d207e85a4)
+
 Update 10/2: Check out dense-grownet-benchmark (preliminary) and dense-grownet-architecture.ipynb
 
 Update 9/25: Benchmarking results will be uploaded hopefully in the next couple of weeks
