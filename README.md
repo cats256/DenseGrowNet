@@ -1,5 +1,4 @@
-![image](https://github.com/user-attachments/assets/39377905-5ede-413f-8a39-1892a00ff5ac)
-
+![graph_3](https://github.com/user-attachments/assets/192ff129-df5e-4778-ba23-7dbbbe3f4076)
 
 Update 10/2: Check out dense-grownet-benchmark (preliminary) and dense-grownet-architecture.ipynb
 
