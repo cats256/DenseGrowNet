@@ -6,9 +6,9 @@ Tree-based models have long been and continue to be state-of-the-art on medium-s
 
 A gradient boosting technique for neural networks is proposed, with superior performance on tabular data and applicability to other forms of data and neural networks.  The first, base model is a one-layer zero-initialized neural network, which is a generalized linear model. A dedicated solver can be used for this step as we are only interested in the raw outputs of the first model. The second model, with the first layer "looks linear" initialized, the second layer zero-initialized, and the activation function belonging to the ReLU-family function, is then trained to predict the residuals or correct the error of the previous model. 'looks linear' initialization can be described as initializing in this pattern. [[1  0 ... 0  0], [-1 0 ... 0  0], [0  1 ... 0  0]. [0 -1 ... 0  0], ..., [0  0 ... 1  0], [0  0 ... -1 0], [0  0 ... 0  1], [0  0 ... 0 -1]], where there are 2N neurons for N features and the next layer can easily replicate linear inputs as max(0, x) - max(0, -x) = x. For further explanation of 'looks linear' initialization see (4). The third model is trained in a similar fashion, however, the intermediate features produced by the first layer of the previous, or second, model are scaled and concatenated to the features used for training. Similarly, train the next k models as the process for the third model. For further clarification, see the diagram above. Adjust regularization, learning rate, and epoch as appropriate.
 
-'looks linear' initialization preserves the original orientation of features at initialization. This is important as it alleviates the downside of a rotationally invariant learning procedure, where "intuitively, to remove uninformative features, a rotationally invariant algorithm has to first find the original orientation of the features, and then select the least informative ones: the information contained in the orientation of the data is lost." (1). This also achieves dynamical isometry, where the singular values of the network's input-output Jacobian concentrate near 1, which "has been shown to dramatically speed up learning", avoid vanishing/exploding gradients, and appears to improve generalization performance (4). Gradient boosting for neural networks where each model is only trained on the original features proved infeasible to train as training loss tends to decrease very slowly. Hence, intermediate features from previous models along with the original features are used to train each model instead, which demonstrated greatly improved training speed. This also appears to have slightly greater generalization performance compared to just training on original features for each model based on a preliminary experiment.
+'looks linear' initialization preserves the original orientation of features at initialization. This is important as it alleviates the downside of a rotationally invariant learning procedure, where "intuitively, to remove uninformative features, a rotationally invariant algorithm has to first find the original orientation of the features, and then select the least informative ones: the information contained in the orientation of the data is lost." (1). This also achieves dynamical isometry, where the singular values of the network's input-output Jacobian concentrate near 1, which "has been shown to dramatically speed up learning", avoid vanishing/exploding gradients, and appears to improve generalization performance (5). Gradient boosting for neural networks where each model is only trained on the original features proved infeasible to train as training loss tends to decrease very slowly. Hence, intermediate features from previous models along with the original features are used to train each model instead, which demonstrated greatly improved training speed. This also appears to have slightly greater generalization performance compared to just training on original features for each model based on a preliminary experiment.
 
-Elastic net regularization, which is L1 + L2 regularization, should be included as part of the training procedure, where both L1 and L2 regularization promote smaller weights. L1 regularization corresponds to the Laplace distribution, where weights tend to be sparse and are penalized proportionally based on their sizes. L2 regularization corresponds to the normal distribution, where weights are penalized quadratically based on their sizes. It is known that L1 regularization is rotationally invariant and logistic regression with L1 regularization is robust against uninformative features, where sample complexity grows only logarithmically with the number of irrelevant features (5). One can, then, see that L1 regularization is also desirable to include as part of the learning procedure, as it mirrors the inductive biases that contribute to tree-based models' strong performance on tabular data. 
+Elastic net regularization, which is L1 + L2 regularization, should be included as part of the training procedure, where both L1 and L2 regularization promote smaller weights. L1 regularization corresponds to the Laplace distribution, where weights tend to be sparse and are penalized proportionally based on their sizes. L2 regularization corresponds to the normal distribution, where weights are penalized quadratically based on their sizes. It is known that L1 regularization is rotationally invariant and logistic regression with L1 regularization is robust against uninformative features, where sample complexity grows only logarithmically with the number of irrelevant features (6). One can, then, see that L1 regularization is also desirable to include as part of the learning procedure, as it mirrors the inductive biases that contribute to tree-based models' strong performance on tabular data. 
 
 Note: Softplus appears to improve generalization and trainability, provided that the curvature of softplus is small, eg. softplus(4 * x) / 4. This is because softplus has a tendency to mimic a linear or identity activation. If most of your values are concentrated at a very small range around 0, say from -0.2 to 0.2, softplus will look more like a linear or identity function rather than a piecewise linear function like ReLU, see example below. This project, however, will not benchmark the result due to lack of time.
 
@@ -42,28 +42,28 @@ Reference:
 1) Why do tree-based models still outperform deep learning on typical tabular data?
 
    https://openreview.net/pdf?id=Fp7__phQszn
-3) Densely Connected Convolutional Networks
+2) Densely Connected Convolutional Networks
 
    https://arxiv.org/pdf/1608.06993
-4) The Shattered Gradients Problem: If resnets are the answer, then what is the question?
+3) The Shattered Gradients Problem: If resnets are the answer, then what is the question?
 
    https://proceedings.mlr.press/v70/balduzzi17b/balduzzi17b.pdf
-5) "looks-linear" initialization explanation
+4) "looks-linear" initialization explanation
 
    https://www.reddit.com/r/MachineLearning/comments/5yo30r/comment/desyjot/
-6) Resurrecting the sigmoid in deep learning through dynamical isometry: theory and practice
+5) Resurrecting the sigmoid in deep learning through dynamical isometry: theory and practice
 
    https://arxiv.org/pdf/1711.04735
-7) Feature selection, L1 vs. L2 regularization, and rotational invariance
+6) Feature selection, L1 vs. L2 regularization, and rotational invariance
 
    https://icml.cc/Conferences/2004/proceedings/papers/354.pdf
-8) Smooth Adversarial Training
+7) Smooth Adversarial Training
 
    https://arxiv.org/abs/2006.14536
-9) Reproducibility in Deep Learning and Smooth Activations
+8) Reproducibility in Deep Learning and Smooth Activations
 
    https://research.google/blog/reproducibility-in-deep-learning-and-smooth-activations/
 
-12) Tim Goodman's explanation of gradient boosting's inductive bias
+9) Tim Goodman's explanation of gradient boosting's inductive bias
 
     https://stats.stackexchange.com/questions/173390/gradient-boosting-tree-vs-random-forest#comment945015_174020
