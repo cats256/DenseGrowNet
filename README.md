@@ -7,19 +7,28 @@ Update 9/25: Benchmarking results will be uploaded hopefully in the next couple 
 Tree-based models have long been and continue to be state-of-the-art on medium-sized tabular data. This is despite extensive deep-learning research on tabular data. Gradient-boosted decision trees (GDBTs), in particular, tend to outperform other types of tree-based models. Certain inductive biases of tree-based models, such as their rotationally variant learning procedure, which extracts information based on features' orientation, and robustness against uninformative features (1), contribute to their strong performance on tabular data, in contrast to MLPs' rotationally invariant learning procedure and high capacity for overfitting. Gradient boosting's inductive bias can be explained as the bias towards explaining the largest proportion of variance through simpler interaction terms, with the contribution to variance decreasing as the order of interaction increases, rather than a large amount of high-order interaction terms, each explaining a small amount of variance. See more explanation at (2).
 
 This project aims to improve neural networks' performance on tabular data through a focus on investigating and applying the inductive biases of tree-based models, particularly, GDBTs, on MLP-like neural nets. A gradient boosting technique for neural networks is proposed, with superior performance on tabular data and applicability to other forms of data and neural networks. The first, base model is a one-layer zero-initialized neural network, which is a generalized linear model. A dedicated solver can be used for this step as we are only interested in the raw outputs of the first model. The second model, with the first layer "looks linear" initialized, the second layer zero-initialized, and the activation function belonging to the ReLU-family function, is then trained to predict the residuals or correct the error of the previous model. 'looks linear' initialization can be described as initializing in this pattern. [
+
    [1  0 ... 0  0],
+
    [-1 0 ... 0  0],
+   
    [0  1 ... 0  0].
+   
    [0 -1 ... 0  0],
+   
    [0  0 ... 1  0],
+   
    [0  0 ... -1 0],
+   
    [0  0 ... 0  1],
+   
    [0  0 ... 0 -1]
+   
 ], where there are 2N neurons for N features and the next layer can easily replicate linear inputs as max(0, x) - max(0, -x) = x. For further explanation of 'looks linear' initialization see (4). The third model is trained in a similar fashion, however, the intermediate features produced by the first layer of the previous, or second, model are scaled and concatenated to the features used for training. Train the next k models in a similar fashion as the process for the third model. For further clarification, see the diagram above. Adjust regularization, learning rate, and epoch as appropriate.
 
-This project proposes a DenseNet-like design (2) with a specific form of 'looks linear' initialization (3), where the network preserves the original orientation of features at initialization and can produce an identity input-output mapping. L1 and L2 regularization is also proposed in addition to this architecture.
+'looks linear' initialization preserves the original orientation of features at initialization. This is important as it alleviates the downside of a rotationally invariant learning procedure, where "intuitively, to remove uninformative features, a rotationally invariant algorithm has to first find the original orientation of the features, and then select the least informative ones: the information contained in the orientation of the data is lost." (1). This also achieves dynamical isometry, where the singular values of the network's input-output Jacobian concentrate near 1, which "has been shown to dramatically speed up learning", avoid vanishing/exploding gradients, and appears to improve generalization performance (4). 
 
-The preservation of the original orientation of features at initialization and initial identity input-output mapping is important as it alleviates the downside of a rotationally invariant learning procedure, where "intuitively, to remove uninformative features, a rotationally invariant algorithm has to first find the original orientation of the features, and then select the least informative ones: the information contained in the orientation of the data is lost." (1). This design also achieves dynamical isometry (4), where the singular values of the network's input-output Jacobian concentrate near 1, which "has been shown to dramatically speed up learning", avoid vanishing/exploding gradients, and appears to improve generalization performance. The residual connections in a DenseNet-like architecture also pose a similarity in its focus on learning the residuals, similar to boosting algorithms, which also tend to be the best-performing class of tree-based models. This similarity is apparent in the many papers published that aim to understand residual networks through boosting theory.
+The residual connections in a DenseNet-like architecture also pose a similarity in its focus on learning the residuals, similar to boosting algorithms, which also tend to be the best-performing class of tree-based models. This similarity is apparent in the many papers published that aim to understand residual networks through boosting theory.
 
 It is known that L1 regularization is rotationally invariant and logistic regression with L1 regularization is robust against uninformative features, where sample complexity grows only logarithmically with the number of irrelevant features (5). One can, then, see that L1 regularization is desirable to include as part of the learning procedure, as it mirrors the inductive biases that contribute to tree-based models' strong performance on tabular data. Overparameterization and the replacement of ReLU with Softplus under this architecture also appear to improve generalization performance, although the effect is very minor.
 
