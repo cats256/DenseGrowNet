@@ -35,6 +35,7 @@ Keywords spam:
 GrowNet, DenseNet, ResNet, neural networks, deep learning, dynamical isometry, 'looks linear' initialization, ReLU, Softplus, activation function, gradient boosting, inductive bias, decision trees, regularization, L1, L2, elastic net
 
 To do:
+- Create an object-oriented library, publish it to PyPI, and run benchmarks
 - Smooth versions of ReLUs and their advantages in README need to be included. This includes improved robustness (7) and smoother optimization landscapes (8) with little accuracy trade-off.
 - Look at deep learning significance testing. https://deep-significance.readthedocs.io/en/latest
 - Check out the convex optimization of a two-layer ReLU neural network.
