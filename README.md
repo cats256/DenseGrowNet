@@ -18,7 +18,7 @@ Note: Softplus appears to improve generalization and trainability, provided that
 
 ![image](https://github.com/user-attachments/assets/6f822155-aeea-45fe-8114-fb6c46a2d893)
 
-Contact: nhatbui@tamu.edu (would be great if someone is looking to discuss, collaborate, or act as a mentor on this research project XD ) 
+Contact: nhatbui@tamu.edu (would be great if someone is looking to discuss, collaborate, or act as a mentor on this research project :D )
 
 Cool read:
 - https://stats.stackexchange.com/questions/339054/what-values-should-initial-weights-for-a-relu-network-be
