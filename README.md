@@ -43,7 +43,7 @@ To do:
    - https://arxiv.org/abs/2002.10553.
    - https://web.stanford.edu/class/ee364b/lectures/convexNN.pdf
    - https://iclr-blogposts.github.io/2024/blog/hidden-convex-relu/
-- Experiment with adaptive softplus.
+- Experiment with adaptive softplus and exponentially increasing step size, learning rate, or exponentially growing gradient descent. https://arxiv.org/abs/2205.07999
   ![image](https://github.com/user-attachments/assets/07f7ac64-5645-43ca-8920-16a6b621026d)
 
 
