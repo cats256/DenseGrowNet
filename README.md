@@ -35,6 +35,7 @@ GrowNet, DenseNet, ResNet, neural networks, deep learning, dynamical isometry, '
 
 To do:
 - Create an object-oriented library, publish it to PyPI, and run benchmarks
+- Experiment with string length distance regularization
 - Smooth versions of ReLUs and their advantages in README need to be included. This includes improved robustness (7) and smoother optimization landscapes (8) with little accuracy trade-off.
 - Look at deep learning significance testing. https://deep-significance.readthedocs.io/en/latest
 - Check out the convex optimization of a two-layer ReLU neural network.
