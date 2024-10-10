@@ -35,6 +35,7 @@ GrowNet, DenseNet, ResNet, neural networks, deep learning, dynamical isometry, '
 
 To do:
 - Create an object-oriented library, publish it to PyPI, and run benchmarks
+- Experiment with string length distance regularization
 - Smooth versions of ReLUs and their advantages in README need to be included. This includes improved robustness (7) and smoother optimization landscapes (8) with little accuracy trade-off.
 - Look at deep learning significance testing. https://deep-significance.readthedocs.io/en/latest
 - Check out the convex optimization of a two-layer ReLU neural network.
@@ -43,8 +44,10 @@ To do:
    - https://arxiv.org/abs/2002.10553.
    - https://web.stanford.edu/class/ee364b/lectures/convexNN.pdf
    - https://iclr-blogposts.github.io/2024/blog/hidden-convex-relu/
-- Experiment with adaptive softplus.
+- Experiment with adaptive softplus and exponentially increasing step size, learning rate, or exponentially growing gradient descent. https://arxiv.org/abs/2205.07999
   ![image](https://github.com/user-attachments/assets/07f7ac64-5645-43ca-8920-16a6b621026d)
+  ![image](https://github.com/user-attachments/assets/6a5a0625-c4c4-4943-8332-7b1f259bba80)
+
 
 
 
