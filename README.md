@@ -1,3 +1,5 @@
+[![Downloads](https://static.pepy.tech/badge/dense-grownet)](https://pepy.tech/project/dense-grownet)
+
 Update 10/5: Benchmarking results will be uploaded hopefully in the next couple of weeks to two months
 
 ![image](https://github.com/user-attachments/assets/775d3268-776f-4179-b5d1-871223d6718a)
