@@ -1,10 +1,9 @@
-import torch
 import torch.nn as nn
 
 
-class CustomLoss(nn.Module):
+class ElasticNetLoss(nn.Module):
     def __init__(self, criterion, l1_lambda, l2_lambda):
-        super(CustomLoss, self).__init__()
+        super(ElasticNetLoss, self).__init__()
         self.criterion = criterion
         self.l1_lambda = l1_lambda
         self.l2_lambda = l2_lambda

@@ -4,8 +4,8 @@ with open("README.md", "r") as f:
     description = f.read()
 
 setup(
-    name="dense-grownet",
-    version="0.1.2",
+    name="dense_grownet",
+    version="0.1.7",
     packages=find_packages(),
     install_requires=[
         "torch",

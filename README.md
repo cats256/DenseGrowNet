@@ -24,6 +24,7 @@ extracted_features = model.extract_features(inputs, prev_output)
 
 Example ElasticNetLoss initialization:
 ```python
+import torch.nn as nn
 from dense_grownet import ElasticNetLoss
 
 criterion = ElasticNetLoss(criterion=nn.CrossEntropyLoss(), l1_lambda=0.01, l2_lambda=0.01)
