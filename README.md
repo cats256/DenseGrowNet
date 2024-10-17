@@ -1,8 +1,42 @@
 [![Downloads](https://static.pepy.tech/badge/dense-grownet)](https://pepy.tech/project/dense-grownet)
 
-Update 10/5: Benchmarking results will be uploaded hopefully in the next couple of weeks to two months
-
 ![image](https://github.com/user-attachments/assets/775d3268-776f-4179-b5d1-871223d6718a)
+
+### Quick Start
+For basic understanding of the package, take a look at "intro" and "method" first.
+
+To import the desired classes, do
+
+```python
+from dense_grownet import DesiredClass
+```
+
+Three classes are currently available: DenseGrowNetBase, ElasticNetLoss, and CustomLinearLayer.
+
+Example DenseGrowNetBase initialization
+```python
+from dense_grownet import DenseGrowNetBase
+
+model = DenseGrowNetBase(input_size, output_size, is_first_model)
+# is_first_model is a boolean which will either initialize a 1-layer neural network, which is essentially a generalized linear model or a
+# 2-layer neural network with ReLU activation, where the first layer is 'looks-linear' initialized and the second layer is zero-initialized
+```
+
+Example ElasticNetLoss initialization
+```python
+from dense_grownet import ElasticNetLoss
+
+criterion = ElasticNetLoss(criterion=nn.CrossEntropyLoss(), l1_lambda=0.01, l2_lambda=0.01)
+# Loss is calculated as criterion_loss + l1_lambda * weights_l1_norm + l2_lambda * weights_l2_norm, with criterion as any desired loss function
+```
+
+Example CustomLinearLayer
+```python
+from dense_grownet import CustomLinearLayer
+
+linear_layer_2 = CustomLinearLayer(input_size, output_size, init="looks_linear")
+# Two init mode supported: "zero" and "looks-linear". Look at method section for example of "looks-linear" initialization
+```
 
 ### Intro
 Tree-based models and, particularly, gradient-boosted decision trees (GDBTs) have long been and continue to be state-of-the-art on medium-sized tabular data, despite extensive deep-learning research on such data types. Certain inductive biases of tree-based models, such as their rotationally variant learning procedure, which extracts information based on features' orientation, and their robustness against uninformative features, contribute to their strong performance on tabular data, in contrast to MLPs' rotationally invariant learning procedure and susceptibility to uninformative features (1). Gradient boosting's inductive bias can be explained as the bias towards explaining the largest proportion of variance through simpler interaction terms, with the contribution to variance decreasing as the order of interaction increases, rather than a large amount of high-order interaction terms, each explaining a small amount of variance. See more explanation at (2). This project aims to improve neural networks' performance on tabular data through a focus on investigating and applying the inductive biases of tree-based models, particularly, GDBTs, on MLP-like neural nets.
