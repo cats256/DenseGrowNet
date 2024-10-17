@@ -5,15 +5,9 @@
 ### Quick Start
 For basic understanding of the package, take a look at "intro" and "method" first.
 
-To import the desired classes, do
-
-```python
-from dense_grownet import DesiredClass
-```
-
 Three classes are currently available: DenseGrowNetBase, ElasticNetLoss, and CustomLinearLayer.
 
-Example DenseGrowNetBase initialization
+Example DenseGrowNetBase initialization:
 ```python
 from dense_grownet import DenseGrowNetBase
 
@@ -22,7 +16,7 @@ model = DenseGrowNetBase(input_size, output_size, is_first_model)
 # 2-layer neural network with ReLU activation, where the first layer is 'looks-linear' initialized and the second layer is zero-initialized
 ```
 
-Example ElasticNetLoss initialization
+Example ElasticNetLoss initialization:
 ```python
 from dense_grownet import ElasticNetLoss
 
@@ -30,7 +24,7 @@ criterion = ElasticNetLoss(criterion=nn.CrossEntropyLoss(), l1_lambda=0.01, l2_l
 # Loss is calculated as criterion_loss + l1_lambda * weights_l1_norm + l2_lambda * weights_l2_norm, with criterion as any desired loss function
 ```
 
-Example CustomLinearLayer
+Example CustomLinearLayer initialization:
 ```python
 from dense_grownet import CustomLinearLayer
 
